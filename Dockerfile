@@ -24,6 +24,6 @@ RUN cd /opt && wget --output-document=android-tools.zip \
 ENV ANDROID_SDK_ROOT "/opt/android-sdk-linux"
 ENV PATH ${PATH}:${ANDROID_SDK_ROOT}/cmdline-tools/bin:${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin:${ANDROID_SDK_ROOT}/build-tools
 
-RUN sdkmanager --update && \
+RUN sdkmanager --update --sdk_root=${ANDROID_SDK_ROOT} && \
     yes | sdkmanager --licenses && \
     sdkmanager "build-tools;33.0.1" "platforms;android-31" "platform-tools" --sdk_root=${ANDROID_SDK_ROOT}
