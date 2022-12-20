@@ -4,7 +4,7 @@ services:
     devices:
       - "/dev/bus/usb:/dev/bus/usb"
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/var/run/:/var/run/"
     build:
       dockerfile: ./Dockerfile
     deploy:
