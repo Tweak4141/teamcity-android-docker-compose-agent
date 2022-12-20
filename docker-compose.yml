@@ -3,6 +3,9 @@ services:
   teamcity-agent:
     devices:
       - "/dev/bus/usb:/dev/bus/usb"
+      - "/var/run/dok
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
     build:
       dockerfile: ./Dockerfile
     deploy:
