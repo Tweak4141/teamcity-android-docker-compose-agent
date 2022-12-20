@@ -25,5 +25,5 @@ ENV ANDROID_SDK_ROOT "/opt/android-sdk-linux"
 ENV PATH ${PATH}:${ANDROID_SDK_ROOT}/cmdline-tools/bin:${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin:${ANDROID_SDK_ROOT}/build-tools
 
 RUN sdkmanager --update --sdk_root=${ANDROID_SDK_ROOT} && \
-    yes | sdkmanager --licenses && \
+    yes | sdkmanager --licenses --sdk_root=${ANDROID_SDK_ROOT} && \
     sdkmanager "build-tools;33.0.1" "platforms;android-31" "platform-tools" --sdk_root=${ANDROID_SDK_ROOT}
