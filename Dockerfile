@@ -17,13 +17,13 @@ ENV PATH ${PATH}:/opt/tools
 ENV LICENSE_SCRIPT_PATH /opt/tools/android-accept-licenses.sh
 
 RUN cd /opt && wget --output-document=android-tools.zip \
-    https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip && \
+    https://dl.google.com/android/repository/commandlinetools-linux-9123335_latest.zip && \
     unzip android-tools.zip -d android-sdk-linux && \
     chown -R root.root android-sdk-linux
 
 ENV ANDROID_HOME /opt/android-sdk-linux
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools
 
-RUN yes | sdkmanager --licenses
-RUN sdkmanager --update
-RUN yes | sdkmanager "build-tools;29.0.3" "platforms;android-29" "ndk-bundle" "ndk;21.0.6113669"
+RUN sdkmanager --update && \
+    yes | sdkmanager --licenses && \
+    sdkmanager "build-tools;33.0.1" "platforms;android-31" "platform-tools"
