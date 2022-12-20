@@ -1,4 +1,4 @@
-FROM jetbrains/teamcity-agent:latest
+FROM jetbrains/teamcity-agent:latest-linux-sudo
 
 MAINTAINER Tweak4141
 
