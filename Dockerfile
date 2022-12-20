@@ -22,7 +22,7 @@ RUN cd /opt && wget --output-document=android-tools.zip \
     chown -R root.root android-sdk-linux
 
 ENV ANDROID_SDK_ROOT "/opt/android-sdk-linux"
-ENV PATH ${PATH}:${ANDROID_HOME}/cmdline-tools/bin
+ENV PATH ${PATH}:${ANDROID_SDK_ROOT}/cmdline-tools/bin:${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin:${ANDROID_SDK_ROOT}/build-tools
 
 RUN sdkmanager --update && \
     yes | sdkmanager --licenses && \
