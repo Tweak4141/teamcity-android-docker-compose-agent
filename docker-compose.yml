@@ -1,16 +1,5 @@
 version: "3"
 services:
-  teamcity-server:
-    image: jetbrains/teamcity-server:2018.1.4
-    deploy:
-        resources:
-            limits:
-                memory: 2G
-    ports:
-      - "8111:${PORT:-8111}"
-    volumes:
-      - ${DATA_PATH:-~/Workspace/TeamCity/data/}:/data/teamcity_server/datadir
-      - ${LOGS_PATH:-~/Workspace/TeamCity/logs/}:/opt/teamcity/logs
   teamcity-agent:
     devices:
       - "/dev/bus/usb:/dev/bus/usb"
