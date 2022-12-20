@@ -1,6 +1,7 @@
 version: "3"
 services:
   teamcity-agent:
+    privileged: true
     devices:
       - "/dev/bus/usb:/dev/bus/usb"
     init: true
