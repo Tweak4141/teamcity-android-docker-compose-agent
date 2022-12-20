@@ -7,7 +7,7 @@ services:
     deploy:
         resources:
             limits:
-                memory: 6G
+                memory: 3G
     #volumes:
       #- ${CONF_PATH:-~/Workspace/TeamCity/agent/}:/data/teamcity_agent/conf
     environment:
