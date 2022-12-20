@@ -4,13 +4,13 @@ MAINTAINER Tweak4141
 
 ENV GRADLE_HOME=/usr/bin/gradle
 ENV DEBIAN_FRONTEND=noninteractive
-
+USER root
 RUN apt-get update
 RUN apt-get install -y --force-yes expect git mc gradle unzip \
     wget curl libc6-i386 lib32stdc++6 lib32gcc1 \
     lib32ncurses5 lib32z1
 RUN apt-get clean
-RUN rm -fr /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#RUN rm -fr /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ADD android-accept-licenses.sh /opt/tools/
 ENV PATH ${PATH}:/opt/tools
