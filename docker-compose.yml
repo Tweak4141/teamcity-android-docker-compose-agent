@@ -16,3 +16,5 @@ services:
       #- ${CONF_PATH:-~/Workspace/TeamCity/agent/}:/data/teamcity_agent/conf
     environment:
       - SERVER_URL=${SERVER_URL}
+      - AGENT_NAME=${AGENT_NAME}
+      - DOCKER_IN_DOCKER=${DIND}
