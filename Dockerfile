@@ -1,6 +1,6 @@
-FROM jetbrains/teamcity-agent:2019.2.1
+FROM jetbrains/teamcity-agent:latest
 
-MAINTAINER Paweł Gajda
+MAINTAINER Tweak4141
 
 ENV GRADLE_HOME=/usr/bin/gradle
 ENV DEBIAN_FRONTEND=noninteractive
