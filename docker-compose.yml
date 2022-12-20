@@ -3,7 +3,9 @@ services:
   teamcity-agent:
     devices:
       - "/dev/bus/usb:/dev/bus/usb"
-    image: teamcity-android-agent
+    build:
+      context: teamcity-agent
+      dockerfile: ./Dockerfile
     deploy:
         resources:
             limits:
