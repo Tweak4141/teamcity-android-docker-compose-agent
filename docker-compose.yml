@@ -10,6 +10,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     build:
       dockerfile: ./Dockerfile
+    ports:
+      - 9090:9090
     deploy:
         resources:
             limits:
@@ -20,3 +22,7 @@ services:
       - SERVER_URL=${SERVER_URL}
       - AGENT_NAME=${AGENT_NAME}
       - DOCKER_IN_DOCKER=${DIND}
+endpoints:
+- path: /
+  service: teamcity-agent
+  port: 9090
