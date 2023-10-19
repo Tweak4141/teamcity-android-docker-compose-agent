@@ -1,4 +1,4 @@
-FROM jetbrains/teamcity-agent:2022.10.1-linux-sudo
+FROM jetbrains/teamcity-agent:EAP-linux-sudo
 
 MAINTAINER Tweak4141
 
